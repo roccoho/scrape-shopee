@@ -33,13 +33,12 @@ class Discord{
             if (this.channels.includes(filetype)) {
                 url = this.get_url(filetype);
             } else {
-                return;
+                resolve('wrong channel');
             } 
             const filename = filepath.split('/').slice(-1)[0];
             const files = {
                 'file[0]': (filename, fs.createReadStream(filepath))
             };
-            
             const options = {
                 url: url,
                 formData: files,
@@ -78,7 +77,7 @@ class Discord{
             if (this.channels.includes(filetype)) {
                 url = this.get_url(filetype);
             } else {
-                return;
+                resolve('wrong channel');
             } 
             let options = {
                 url: url,
