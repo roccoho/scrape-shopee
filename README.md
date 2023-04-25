@@ -11,7 +11,7 @@
 
 All is done in Node.js
 
-~~### Python~~
+~~Python~~\
 ~~- Deployed in Cloud Functions triggered by topic subscription.~~\
 ~~- Retrieves latest html and sqlite file from <sub>discord</sub>~~\
 ~~- Beautifulsoup to extract data~~\
