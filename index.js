@@ -293,6 +293,18 @@ async function get_html(discord, html_file, cookie_file){
   await page.setCookie(...cookies);
   console.log('going to shopee');
   await page.goto('https://shopee.com.my/cart', {waitUntil: 'load', timeout: 0});
+  await new Promise(r => setTimeout(r, 5000));
+
+  const check_login = (await page.$('[placeholder="Phone number / Username / Email"]')) || "";
+  if (check_login!==""){
+    const email_input = await page.waitForSelector('input[type="text"][placeholder="Phone number / Username / Email"]');
+    await email_input.type(process.env.shopeeUser);
+    const password_input = await page.waitForSelector('input[type="password"][placeholder="Password"]');
+    await password_input.type(process.env.shopeePassword);
+
+    page.keyboard.press('Enter');
+  }
+
   await page.waitForSelector('.container', {visible: true});
   console.log('found container');
   await page.waitForSelector('.stardust-checkbox', {visible: true});
