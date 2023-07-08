@@ -6,7 +6,11 @@
   },
   "dependencies": {
     "@google-cloud/pubsub": "3.4.1",
+    "mimelib": "^0.3.1",
+    "node-html-parser": "^6.1.5",
+    "nodemailer": "^6.9.1",
     "puppeteer": "^19.2.2",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "sqlite3": "^5.1.6"
   }
 }
